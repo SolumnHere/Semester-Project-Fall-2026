@@ -1,0 +1,63 @@
+::root {
+    /* Hisotry, FAQs, and Book a Tour */
+    --background-color: #F7F6F2;
+    /* Header, Hero, Living & Wellbeing và Footer. */
+    --primary-color: #0B142C;
+    /* Book a Tour button, decorate line, small tag */
+    --support-color: #D7B332;
+    /* Features, Inside landmark, contact form */
+    --card-color: #FFFFFF;
+
+    --text-color: #27334B;
+    --text-s: 12px;
+    --text-m: 24px;
+    --text-l: 36px;
+
+    --border-radius-s: 2px;
+    --border-radius-m: 4px;
+    --border-radius-l: 6px;
+    --border-radius-xl: 8px;
+
+    --max-width-img: 100%;
+    --max-height-img: 500px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.card {
+    background-color: var(--card-color);
+    color: var(--text-color);
+    border-radius: var(--border-radius-m);
+    padding: 20px;
+    overflow: hidden;
+}
