@@ -1,4 +1,4 @@
-::root {
+:root {
     /* Hisotry, FAQs, and Book a Tour */
     --background-color: #F7F6F2;
     /* Header, Hero, Living & Wellbeing và Footer. */
@@ -60,4 +60,138 @@ p {
     border-radius: var(--border-radius-m);
     padding: 20px;
     overflow: hidden;
+}
+
+.site-header {
+    margin: 0;
+    padding: 0;
+
+    .header-bar {
+        background-color: var(--background-color);
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 6%;
+            color: #0B142C;
+            min-height: 6rem;
+
+            .header-brand {
+                margin: 0;
+                font-size: 1.375rem;
+                font-weight: 600;
+                line-height: 1.2;
+
+                a {
+                    color: inherit;
+                    text-decoration: 0;
+                }
+            }
+
+            .header-tagline {
+                margin: 0.25rem 0 0;
+                color: #81681F;
+                font-size: 0.6rem;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+
+            .nav-list {
+                display: flex;
+                gap: 2rem;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                .nav-link {
+                    list-style-type: none;
+                    text-decoration: none;
+                    font-weight: 500;
+                    color: #0B142C;
+
+                }
+            }
+
+            .book-tour-button {
+                    background-color: var(--support-color);
+                padding: 0.6rem 1.2rem;
+                font-weight: bold;
+                border: 0px solid white;
+
+                a {
+                    color: #0B142C;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: var(--primary-color);
+    color: white;
+    margin: 0;
+    padding: 4rem 7rem;
+
+    .footer-brand {
+        margin: 0;
+        flex: 0 0 39%;
+
+        h2 {
+            margin: 0 0 1rem 0;
+            font-size: 1.5rem;
+            letter-spacing: 0.05rem;
+        }
+
+        .footer-tagline {
+            margin: 0 0 1.25rem 0;
+            color: #CBD5E1;
+            font-size: 0.95rem;
+        }
+
+        .footer-location {
+            margin: 0;
+            color: #94A3B8;
+            font-size: 0.85rem;
+        }
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 5rem;
+
+
+        .footer-column {
+            .footer-title {
+                margin: 0 0 1.25rem 0;
+                font-weight: 600;
+                font-size: 0.95rem;
+                color: #FFFFFF;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0; 
+                display: flex;
+                flex-direction: column;
+                gap: 0.05rem;
+
+                .footer-link {
+                    text-decoration: none;
+                    color: #CBD5E1;
+                    font-size: 0.9rem;
+                    transition: color 0.2s ease;
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
 }
