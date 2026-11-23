@@ -72,7 +72,7 @@
 
             <div class="inside-content">
                 <div class="inside-image">
-                    <img src="Gallery/Images/20_Landmark_81_Night.jpg" alt="">
+                    <img src="Gallery/Images/landmark-tower.webp" alt="">
                 </div>
 
                 <div class="inside-cards">
@@ -125,7 +125,7 @@
 
             <div class="feature-cards">
                 <div class="feature-card card">
-                    <img src="Gallery/Images/08_Connecting_Family_Room.jpg" alt="">
+                    <img src="Gallery/Images/b4d8bfdb2faeedaef08885ed15b693751a76bfed5b80bb78a796e5b7b04f.avif" alt="">
                     <div class="feature-card description">
                         <h2>A stay above the city</h2>
                         <p>Rooms and states with space too make the city your own</p>
@@ -134,7 +134,7 @@
                 </div>
 
                 <div class="feature-card card">
-                    <img src="Gallery/Images/11_Mall_1.jpg" alt="">
+                    <img src="Gallery/Images/Vincom-Center-Dong-Khoi-is-one-of-the-popular-Ho-Chi-Minh-City-shopping-malls_1759046798.webp" alt="">
                     <div class="feature-card description">
                         <h2>A day at Vincom Center</h2>
                         <p>Shopping, cinema and discoveries for every kind of day</p>
@@ -143,7 +143,7 @@
                 </div>
 
                 <div class="feature-card card">
-                    <img src="Gallery/Images/14_Akoya_Spa_1.jpg" alt="">
+                    <img src="Gallery/Images/ak-sgnak-horizon-spa-n-welln-20932-46647_Classic-Hor.jpeg" alt="">
                     <div class="feature-card description">
                         <h2>Your moment of calm</h2>
                         <p>Make time for a spa experience and a slower pace.</p>
@@ -156,16 +156,29 @@
         <div class="Living-banner" id="living">
             <h2 class="section-title">Living & wellbeing</h2>
             <p class="section-description">The city at your feet. Life at your own pace.</p>
-            <div class="living-gallery">
-                <img class="living-gallery-lead" src="Gallery/Images/01_Pool_2.jpg" alt="Pool overlooking the city">
-                <figure>
-                    <img src="Gallery/Images/02_Gym_1.jpg" alt="Gym at Landmark 81">
-                    <figcaption>Move your way</figcaption>
-                </figure>
-                <figure>
-                    <img src="Gallery/Images/09_Central_Park_1.jpg" alt="Green space at Vinhomes Central Park">
-                    <figcaption>Find your green</figcaption>
-                </figure>
+
+            <div class="gallery-wrapper">
+                <button type="button" class="prev" aria-label="Previous image">&#8592;</button>
+
+                <div class="living-gallery">
+                    <img src="Gallery/living and wellbeing/01.webp" alt="">
+                    <img src="Gallery/living and wellbeing/02.jpg" alt="">
+                    <img src="Gallery/living and wellbeing/03.jpg" alt="">
+                    <img src="Gallery/living and wellbeing/04.avif" alt="">
+                    <img src="Gallery/living and wellbeing/05.avif" alt="">
+                    <img src="Gallery/living and wellbeing/06.jpg" alt="">
+                    <img src="Gallery/living and wellbeing/07.jpg" alt="">
+                    <img src="Gallery/living and wellbeing/08.jpeg" alt="">
+                    <img src="Gallery/living and wellbeing/09.jpeg" alt="">
+                    <img src="Gallery/living and wellbeing/10.jpeg" alt="">
+                    <img src="Gallery/living and wellbeing/11.jpeg" alt="">
+                    <img src="Gallery/living and wellbeing/12.jpeg" alt="">
+                    <img src="Gallery/living and wellbeing/13.jpeg" alt="">
+                    <img src="Gallery/living and wellbeing/14.jpeg" alt="">
+
+                </div>
+
+                <button type="button" class="next" aria-label="Next image">&#8594;</button>
             </div>
         </div>
 
@@ -296,5 +309,26 @@
             </div>
         </div>
     </footer>
+    <script>
+        const gallery = document.querySelector('.living-gallery');
+        const [firstImage, secondImage] = gallery.children;
+        const galleryControls = gallery.parentElement;
+
+        for (const [selector, direction] of [['.prev', -1], ['.next', 1]]) {
+            galleryControls.querySelector(selector).addEventListener('click', () => {
+                const step = secondImage.offsetLeft - firstImage.offsetLeft;
+                const end = gallery.scrollWidth - gallery.clientWidth;
+                const position = gallery.scrollLeft;
+
+                if (direction > 0 && position >= end - 1) {
+                    gallery.scrollTo({ left: 0 });
+                } else if (direction < 0 && position <= 1) {
+                    gallery.scrollTo({ left: end });
+                } else {
+                    gallery.scrollBy({ left: direction * step });
+                }
+            });
+        }
+    </script>
 </body>
 </html>

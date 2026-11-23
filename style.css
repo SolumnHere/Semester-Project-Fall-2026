@@ -302,32 +302,44 @@ main > :not(.banner) {
     background-color: var(--primary-color);
     color: white;
 
-    .living-gallery {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: clamp(0.75rem, 2vw, 2rem);
+    .gallery-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
         margin-top: 2rem;
 
-        figure {
+        button {
+            flex-shrink: 0;
+            width: 45px;
+            height: 45px;
+            border: 1px solid white;
+            border-radius: 50%;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .living-gallery {
+            display: flex;
+            gap: clamp(0.75rem, 2vw, 2rem);
+            flex: 1;
             min-width: 0;
-            margin: 0;
-        }
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            scroll-snap-type: x mandatory;
+            margin-top: 2rem;
 
-        img {
-            display: block;
-            width: 100%;
-            aspect-ratio: 4 / 1;
-            object-fit: cover;
-        }
-
-        .living-gallery-lead {
-            grid-column: 1 / -1;
-            aspect-ratio: 15 / 4;
-        }
-
-        figcaption {
-            margin-top: 0.5rem;
-            font-weight: 600;
+            img {
+                display: block;
+                flex: 0 0 15%;
+                aspect-ratio: 2/3;
+                width: 10%;
+                object-fit: cover;
+                border-radius: 5%;
+                scroll-snap-align: start;
+            }
         }
     }
 }
